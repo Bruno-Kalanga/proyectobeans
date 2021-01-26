@@ -17,7 +17,16 @@
         if (dato != null){
             int departamento = Integer.parseInt(dato);
             %>
-            <%=empdept.getEmpleados(departamento)%>
+            <table class="table table-primary">
+                <thead>
+                    <tr>
+                        <th>Apellido</th>
+                        <th>Oficio</th>
+                        <th>Salario</th>
+                    </tr>
+                    <%=empdept.getEmpleados(departamento)%>
+                </thead>
+            </table>            
             <%
         }
         %>

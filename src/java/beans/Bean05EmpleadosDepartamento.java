@@ -42,8 +42,7 @@ public class Bean05EmpleadosDepartamento {
         PreparedStatement pst = cn.prepareStatement(sql);
         pst.setInt(1, departamento);
         ResultSet rs = pst.executeQuery();
-        String html = "<table class='table table-primary'>";
-        html += "<thead><tr><th>Apellido</th><th>Oficio</th><th>Salario</th></tr></thead>";
+        String html = "";
         while (rs.next()) {
             String ape = rs.getString("APELLIDO");
             String ofi = rs.getString("OFICIO");
