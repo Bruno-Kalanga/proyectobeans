@@ -84,4 +84,22 @@ public class Controller01Departamentos {
     public void modificarDepartamento(int deptno, String nom, String loc, int newdeptno) throws SQLException {
         this.repo.modificarDepartamento(deptno, nom, loc, newdeptno);
     }
+
+    public String getTablaEliminarDept() throws SQLException {
+        ArrayList<Departamento> departamentos
+                = this.repo.getDepartamentos();
+        String html = "";
+        for (Departamento dept : departamentos) {
+            html += "<tr>";
+            html += "<td>" + dept.getNumero() + "</td>";
+            html += "<td>" + dept.getNombre() + "</td>";
+            html += "<td>" + dept.getLocalidad() + "</td>";
+            html += "<td>";
+            html += "<button type='submit' name='eliminar' value='"
+                    + dept.getNumero() + "'>Eliminar</button>";
+            html += "</td>";
+            html += "</tr>";
+        }
+        return html;
+    }
 }

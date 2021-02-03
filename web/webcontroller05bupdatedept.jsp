@@ -48,7 +48,7 @@
             String nom = controller.getDepartamento(deptno).getNombre();
             String loc = controller.getDepartamento(deptno).getLocalidad();
             %>
-            <form method="post">
+            <form method="post" id="formularioedicion" style="display: show">
                 <table border="5">
                     <thead>
                         <tr>
@@ -83,6 +83,13 @@
                                 </button>
                             </td>
                         </tr>
+                        <tr>
+                            <td colspan="3">
+                                <button type="button" style="width:100%" name="botoncancelar">
+                                    Cancelar
+                                </button>
+                            </td>
+                        </tr>
                     </tfoot>
                 </table>
             </form>
@@ -92,7 +99,13 @@
         <script src="js/jquery-3.5.1.min.js" type="text/javascript"></script>
         <script>
             $(document).ready(function() {
-                
+                //opcion para boton tipo button
+                //con submit no funciona
+                //EN EL FORMULARIO (ID NECESARIO) EL STYLE="DISPLAY:NONE"
+                $("button[name=botoncancelar]").click(function()
+                       $("#formularioedicion").hide();
+                        
+                );
             });
         </script>
     </body>
